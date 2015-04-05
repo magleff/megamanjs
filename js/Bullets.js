@@ -7,7 +7,7 @@ Bullets.prototype = Object.create(Phaser.Group.prototype);
 Bullets.prototype.constructor = Bullets;
 
 Bullets.prototype.preload = function(){
-    this.game.load.image('bullet', '../assets/sprite/bullet.png');
+    this.game.load.image('bullet', 'assets/sprite/bullet.png');
 }
 Bullets.prototype.create = function(){
     this.pool = this.game.add.group();
