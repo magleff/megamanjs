@@ -1,0 +1,10 @@
+{
+  "name": "megamanjs",
+  "dependencies": {
+    "grunt-browser-sync": "^2.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jit-grunt": "^0.9.1",
+    "load-grunt-tasks": "^3.1.0",
+    "matchdep": "^0.3.0"
+  }
+}

@@ -1,9 +1,10 @@
 MegaMan = function(game){
-    this.startX = 40;
-    this.startY = 10;
+    console.log(this);
+    startX = 40;
+    startY = 10;
     
-    this.nextFire = 0;
-    this.fireRate = 100;
+    nextFire = 0;
+    fireRate = 10;
     this.game = game;
     
     this.power = 0;
@@ -24,7 +25,7 @@ MegaMan.prototype.create = function(layer, cursors, bullets) {
     this.bullets = bullets;
     this.layer = layer;
     
-    Phaser.Sprite.call(this, this.game, this.startX, this.startY, 'megaman');
+    Phaser.Sprite.call(this, this.game, startX, startY, 'megaman');
 
     this.animations.add('run',  	Phaser.Animation.generateFrameNames('run'     , 1, 4, '', 2), 5, true);
     this.animations.add('idle',     Phaser.Animation.generateFrameNames('idle'    , 1,12, '', 2), 4, true);
@@ -57,7 +58,7 @@ MegaMan.prototype.update = function() {
    	
     if (up) {
         if(floor) {
-            this.power = 39;
+            this.power = 36;
             this.body.velocity.y = -10;
         }
         if (this.power > 0) {
@@ -131,8 +132,8 @@ MegaMan.prototype.update = function() {
 };
 
 MegaMan.prototype.fire = function() {
-    if (this.game.time.now > this.nextFire && this.bullets.pool.countDead() > 0) {
-        this.nextFire = this.game.time.now + this.fireRate;
+    if (this.game.time.now > nextFire && this.bullets.pool.countDead() > 0) {
+        nextFire = this.game.time.now + fireRate;
         var bullet = this.bullets.pool.getFirstDead();
         bullet.reset(this.x - 8, this.y - 8);
         bullet.rotation = this.game.physics.arcade.moveToPointer(bullet, 350);

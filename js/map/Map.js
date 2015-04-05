@@ -7,8 +7,8 @@ Map.prototype = Object.create(Phaser.Sprite.prototype);
 Map.prototype.constructor = Map;
 
 Map.prototype.preload = function() {
-    this.game.load.tilemap('tilemap_megamanboss', 'assets/tilemaps/megamanboss.json', null, Phaser.Tilemap.TILED_JSON);
-    this.game.load.image('tileset_metalman', 'assets/tilemaps/metalman.png');
+    this.game.load.tilemap('tilemap_megamanboss', 'assets/tilemap/megamanboss.json', null, Phaser.Tilemap.TILED_JSON);
+    this.game.load.image('tileset_metalman', 'assets/tilemap/metalman.png');
 };
 
 Map.prototype.create = function() {

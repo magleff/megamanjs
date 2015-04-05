@@ -15,7 +15,7 @@ function Main() {
 	megaman = new MegaMan(game),
 	bullets = new Bullets(game),
 	enemies = new Enemies(game),
-	map 	= new Metalmap(game);
+	map 	= new Map(game);
 	var background;
 	
 	var tilesprite;

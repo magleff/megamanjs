@@ -1,17 +1,17 @@
-Heatmap = function(game){
+HeatMap = function(game){
     this.game = game;
 };
 
-Heatmap.prototype = Object.create(Phaser.Sprite.prototype);
+HeatMap.prototype = Object.create(Phaser.Sprite.prototype);
 
-Heatmap.prototype.constructor = Map;
+HeatMap.prototype.constructor = Map;
 
-Heatmap.prototype.preload = function() {
+HeatMap.prototype.preload = function() {
     this.game.load.tilemap('tilemap_heatman', 'assets/tilemap/heatman.json', null, Phaser.Tilemap.TILED_JSON);
     this.game.load.image('tileset_heatman', 'assets/tilemap/heatman.png');
 };
 
-Heatmap.prototype.create = function() {
+HeatMap.prototype.create = function() {
     this.front = this.game.add.tilemap('tilemap_heatman');
 
     this.front.addTilesetImage('heatman', 'tileset_heatman');
@@ -19,12 +19,8 @@ Heatmap.prototype.create = function() {
     this.layer = this.front.createLayer('Ground');
     this.colle = this.front.createLayer('Collectibles');
     this.layer.resizeWorld();
-    
-    
-    
-    console.log(this.game);
 };
 
-Heatmap.prototype.update = function() {
+HeatMap.prototype.update = function() {
     
 };
