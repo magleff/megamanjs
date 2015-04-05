@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Megaman engine test</title>
+        <script src="bower_components/phaser/build/phaser.min.js"></script>
+        <script src="js/Main.js"></script>
+        <script src="js/MegaMan.js"></script>
+        <script src="js/EnemyTank.js"></script>
+        <script src="js/Bullets.js"></script>
+        <script src="js/Enemies.js"></script>
+        <script src="js/Map.js"></script>
+        <script src="js/map/metalman.js"></script>
+        <script src="js/map/heatman.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        
+        // function http_get(theUrl)
+        // {
+        //     var xmlHttp = null;
+        //     xmlHttp = new XMLHttpRequest();
+        //     xmlHttp.open( "GET", theUrl, false );
+        //     xmlHttp.send( null );
+        //     return xmlHttp.responseText;
+        // }
+
+        // function load_objects_from_tiled_map(url,name){
+        //     var json_data = JSON.parse(http_get(url));
+        //     var objects_to_return = new Array();
+        //     for(var layers = 0; layers < json_data['layers'].length; layers++){
+        //         current_layer = json_data['layers'][layers];
+        //         if(current_layer['type'] == "objectgroup" && current_layer['name'] == name){
+        //             for(var o = 0; o < current_layer['objects'].length; o++){
+        //                 current_layer_object = current_layer['objects'][o];
+        //                 objects_to_return.push(current_layer_object);
+        //             }
+        //         }
+        //     }
+        //     return objects_to_return;
+        // }
+            window.onload = function() {
+                var tilemap = 'assets/tilemaps/megamanbossladder.json';
+                var tileset = 'assets/tilemaps/metalman_transparent.png';
+                main = new Main(tilemap,tileset);
+            };
+        </script>
+        
+        <script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='//HOST:3002/browser-sync/browser-sync-client.1.9.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+//]]></script>
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "megamanjs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Denis2222/megamanjs",
+  "description": "remake classic megaman",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "phaser": "~2.1.2"
+  }
+}
