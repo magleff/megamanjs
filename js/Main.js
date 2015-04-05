@@ -15,7 +15,7 @@ function Main() {
 	megaman = new MegaMan(game),
 	bullets = new Bullets(game),
 	enemies = new Enemies(game),
-	map 	= new Map(game);
+	map 	= new HeatMap(game);
 	var background;
 	
 	var tilesprite;
@@ -42,12 +42,13 @@ function Main() {
 	function create() {
 	    game.time.advancedTiming = true
 	    game.physics.arcade.gravity.y = 400;
-	    game.camera.deadzone = new Phaser.Rectangle(100, 50, 56, 156);
+	    
 	    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
 	    cursors = game.input.keyboard.createCursorKeys();
 
 	    fullscreen = game.input.keyboard.addKey(Phaser.Keyboard.F);
+
 	    fullscreen.onDown.add(goFull, this);
 	
         star = this.game.add.tileSprite(0, 0, 360, 220, 'star');
@@ -105,7 +106,9 @@ function Main() {
 	}
 	
 	function render() {
-	
+		game.debug.cameraInfo(game.camera, 32, 32);
+		game.debug.bodyInfo(megaman, 32, 32);
+        game.debug.body(megaman);
 	}
 	
 	function goFull(){

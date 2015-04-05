@@ -18,7 +18,9 @@ HeatMap.prototype.create = function() {
     this.front.setCollisionByExclusion([1,3,5,6,7,8,9,10,11,15,16,17,18,19,20,24,21,27,28,29,31,32,33,34,39]);
     this.layer = this.front.createLayer('Ground');
     this.colle = this.front.createLayer('Collectibles');
+    console.log(this.colle);
     this.layer.resizeWorld();
+
 };
 
 HeatMap.prototype.update = function() {

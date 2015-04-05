@@ -36,7 +36,7 @@ EnemyTank = function (index, game, player, bullets, layer, explosions) {
     
     this.text = this.game.add.text(10,10, "FPS", {
         font: "16px Arial",
-        fill: "#ffffff",
+        fill: "#00FF00",
         align: "center"
     });
 	this.text.anchor.setTo(0.5, 0.5);
@@ -66,14 +66,15 @@ EnemyTank.prototype.damage = function() {
         this.shadow.kill();
         this.tank.kill();
         this.turret.kill();
-
+        this.game.world.remove(this.text);
         return true;
     }else{
         
         var explosionAnimation = this.explosions.getFirstExists(false);
-
-        explosionAnimation.reset(this.tank.x, this.tank.y);
-        explosionAnimation.play('kaboom', 30, false, true);
+        if(explosionAnimation !== null) {
+            explosionAnimation.reset(this.tank.x, this.tank.y);
+            explosionAnimation.play('kaboom', 30, false, true);
+        }
     }
     return false;
 }
@@ -116,11 +117,12 @@ EnemyTank.prototype.update = function() {
 		    this
 		);
 		
-		this.text.setText('BOB');
+		this.text.setText('BOB:'+this.health);
         this.text.position.x = this.tank.position.x+30;
         this.text.position.y = this.tank.position.y+30;
 		
     }
-
+        this.game.debug.bodyInfo(this.tank.body, 32, 150);
+        this.game.debug.body(this.tank.body);
 };
    

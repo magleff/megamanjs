@@ -12,7 +12,7 @@ Enemies.prototype.create = function(target, bullets,layer,explosions){
     this.layer = layer;
     this.explosions = explosions
 
-    this.enemiesTotal = this.enemiesAlive = 5;
+    this.enemiesTotal = this.enemiesAlive = 35;
 
     for (var i = 0; i < this.enemiesTotal; i++) {
         this.pool.push(new EnemyTank(i, this.game, this.target, this.bullets, this.layer, this.explosions));
@@ -20,6 +20,8 @@ Enemies.prototype.create = function(target, bullets,layer,explosions){
 
     this.pool.enableBody = true;
     this.pool.physicsBodyType = Phaser.Physics.ARCADE;
+
+
 }
 
 Enemies.prototype.update = function(){
@@ -27,5 +29,6 @@ Enemies.prototype.update = function(){
     
     for (var i = 0; i < this.pool.length; i++) {
         this.pool[i].update();
+        
     }
 }
