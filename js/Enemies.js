@@ -3,7 +3,7 @@ Enemies = function (game) {
 };
 
 Enemies.prototype.preload = function(){
-    this.game.load.atlas('enemy',  '../assets/spritesheet/tank/texture.png', '../assets/spritesheet/tank/anim.json');
+    this.game.load.atlas('enemy',  'assets/spritesheet/tank/texture.png', 'assets/spritesheet/tank/anim.json');
 }
 Enemies.prototype.create = function(target, bullets,layer,explosions){
     this.pool = [];
