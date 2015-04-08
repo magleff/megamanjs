@@ -13,14 +13,14 @@ MegaMan = function(game){
 MegaMan.prototype.constructor = MegaMan;
 MegaMan.prototype = Object.create(Phaser.Sprite.prototype);
 MegaMan.prototype.preload = function() {
-	this.game.load.atlas('megaman', 'assets/spritesheet/megaman/texture.png', 'assets/spritesheet/megaman/anim.json');
+    this.game.load.atlas('megaman', 'assets/spritesheet/megaman/texture.png', 'assets/spritesheet/megaman/anim.json');
 }
 
 MegaMan.prototype.create = function(mapLayer, cursors, bullets) {
     this.cursors = cursors;
     this.bullets = bullets;
     this.mapLayer = mapLayer;
-    
+
     Phaser.Sprite.call(this, this.game, startX, startY, 'megaman');
 
     this.animations.add('run',  	Phaser.Animation.generateFrameNames('run'     , 1, 4, '', 2), 5, true);
@@ -31,9 +31,9 @@ MegaMan.prototype.create = function(mapLayer, cursors, bullets) {
     this.animations.add('shoot',    Phaser.Animation.generateFrameNames('shoot'   , 0, 1, '', 2), 5, true);
     this.animations.add('sprite',   Phaser.Animation.generateFrameNames('sprite' , 23,23, '', 2), 1, true);
     this.animations.add('hit',      Phaser.Animation.generateFrameNames('damaged' , 1, 1, '', 2), 1, true);
-    
+
     this.anchor.set(0.5,0.5);
-    
+
     this.game.add.existing(this);
     this.game.camera.follow(this);
     this.game.camera.deadzone = new Phaser.Rectangle(40, 10, 160, 155);
@@ -42,16 +42,16 @@ MegaMan.prototype.create = function(mapLayer, cursors, bullets) {
 }
 
 MegaMan.prototype.update = function() {
-	this.body.allowGravity = true;
+    this.body.allowGravity = true;
     this.game.physics.arcade.collide(this, this.mapLayer);
-	this.body.velocity.x = 0;
-	
-	var up      = this.cursors.up.isDown;
-	var down    = this.cursors.down.isDown;
-	var left    = this.cursors.left.isDown;
-	var right   = this.cursors.right.isDown;
-	var gravity = this.body.allowGravity;
-	var floor   = this.body.onFloor();
+    this.body.velocity.x = 0;
+
+    var up      = this.cursors.up.isDown;
+    var down    = this.cursors.down.isDown;
+    var left    = this.cursors.left.isDown;
+    var right   = this.cursors.right.isDown;
+    var gravity = this.body.allowGravity;
+    var floor   = this.body.onFloor();
 
     if (up) {
         if(floor) {
@@ -62,7 +62,7 @@ MegaMan.prototype.update = function() {
             this.body.velocity.y -= this.power;
         }
     }
-    
+
     if (down) {
         this.body.velocity.y -= 10;
         this.animations.play('fall');
