@@ -4,18 +4,20 @@
         <meta charset="UTF-8" />
         <title>Megaman engine test</title>
         <script src="bower_components/phaser/build/phaser.min.js"></script>
+        <script src="bower_components/lodash/lodash.min.js"></script>
         <script src="js/Main.js"></script>
-        <script src="js/MegaMan.js"></script>
-        <script src="js/EnemyTank.js"></script>
-        <script src="js/Bullets.js"></script>
-        <script src="js/Enemies.js"></script>
-        <script src="js/map/Map.js"></script>
-        <script src="js/map/MetalMap.js"></script>
-        <script src="js/map/HeatMap.js"></script>
+        <script src="js/megaman/MegaMan.js"></script>
+        <script src="js/enemies/Bullets.js"></script>
+        <script src="js/enemies/Enemy.js"></script>
+        <script src="js/enemies/tank/EnemyTank.js"></script>
+        <script src="js/enemies/EnemyPool.js"></script>
+        <script src="js/maps/Map.js"></script>
+        <script src="js/maps/MetalMap.js"></script>
+        <script src="js/maps/HeatMap.js"></script>
     </head>
     <body>
         <script type="text/javascript">
-        
+
         // function http_get(theUrl)
         // {
         //     var xmlHttp = null;
@@ -43,7 +45,7 @@
                 main = new Main();
             };
         </script>
-        
+
 <script type='text/javascript' id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.2.5.2.js'><\/script>".replace("HOST", location.hostname));
 //]]></script>
